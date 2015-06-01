@@ -100,6 +100,11 @@ Such enhancement would greatly help the coherent diffraction imaging, and could 
 While the coherent diffraction imaging has been widely employed to investigate the inner structure of non-crystalline weak object such as biological samples or nanoparticles, limited by the flux of current beam sources, some even weaker objects are still diificult to be imaged. 
 In order to investigate such kind of samples, some approaches have been proposed and demonstrated. For example, Lan et. al. presents a counter-intuitive method that heavy atoms can be used to enhance the biological samples without adding noise \cite{template}; Kim et. al., on the other hand, experimentally demonstrate that some ``reference objects'' added to the sample can greatly improve the image quality \cite{ref-obj}. 
 
+While a heavy-atom template or reference objects might help enhance the CDI reconstruction quality, gold nanoparticles (GNPs), which are handy for preparation and commercially availabe, could provide another way for CDI image enhancement \cite{shintake}.
+With proper functionalization or modification, GNPs can be labeled to designated part of the sample.
+Such labeling might find its application in the imaging of biological samples, because its advantages are two-fold: on one hand the labels help locate the sample; on the other hand these GNPs could enhance the CDI through the interferences.
+To investigate the feasibility of CDI enhancement with GNPs, here we will demonstrate the ``self-enhancement'' of GNPs under the illumination of the X-FEL pulse. Our reconstruction from experimental data shows that while a single GNP cannot be imaged with current pulse brilliance, the diffraction pattern of an aggregate of two or three GNPs can be reconstructed at ease.
+
 
 \section{Sample preparation and experiment set-up}
 
@@ -110,15 +115,20 @@ The photon energy was 4000 eV, the pulse duration was approximately 10 fs and th
 
 The concentration of our liquid samples was carefully adjusted to maximize the probability of hitting only one single or few GNPs. 
 Prepared solution was dipped and sealed in the micro-cell, which is fabricated on a Si$_3$N$_4$ membrane, and the samples were mounted in the Multiple Application X-ray Imaging Chamber (MAXIC). 
-Single-shot speckle patterns were recorded with a $2400\times2400$ CCD dector, which has a central aperture to allow direct beam passing through.
+Single-shot speckle patterns were recorded with a $2399\times2399$ CCD dector, which has a central aperture to allow direct beam passing through. 
+The sample stage was automatically controlled by a program, and the data acquisition was synchornized with the X-FEL shots.
+
 
 \section{Results and discussion}
+
 The obtained diffraction patterns were centrosymmetrized and $5\times5$ binned to improve the signal-to-noise ratio. 
 An engineered algorithm which combines the Guided hybrid input-output (GHIO) \cite{ghio} and shrink-wrap (SW) \cite{sw} was employed to reconstructed the images. 
 The reconstruction started with an initial support derived from the inverse Fourier transform of the measured intensity. 
-At the end of each generation, the copy with lowest $E_F$ is selected, and an updated support is generated from the selected copy.
+At the end of each generation, the copy with lowest Fourier-domain error $E_F$ is selected, and an updated support is generated from the selected copy.
+
 
 \section{Conclusion}
+
 To conclude, we studied the interferences of GNPs in CDI experiments, showing that 10-nm and 40-nm GNPs can be imaged as long as more than one GNPs are imaged. 
 
 % Put \label in argument of \section for cross-referencing
