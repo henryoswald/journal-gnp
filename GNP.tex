@@ -21,7 +21,7 @@
 %  Add 'draft' option to mark overfull boxes with black boxes
 %  Add 'showpacs' option to make PACS codes appear
 %  Add 'showkeys' option to make keywords appear
-\documentclass[aps,prb,preprint,groupedaddress]{revtex4-1}
+\documentclass[aps,prb,reprint,groupedaddress, superscriptaddress]{revtex4-1}
 %\documentclass[aps,prl,preprint,superscriptaddress]{revtex4-1}
 %\documentclass[aps,prl,reprint,groupedaddress]{revtex4-1}
 
@@ -29,7 +29,7 @@
 % Choosing a journal automatically selects the correct APS
 % BibTeX style file (bst file), so only uncomment the line
 % below if necessary.
-%\bibliographystyle{apsrev4-1}
+\bibliographystyle{apsrev4-1}
 
 \begin{document}
 
@@ -41,7 +41,7 @@
 %\preprint{}
 
 %Title of paper
-\title{Imaging of gold nanoparitcles at SACLA}
+\title{Self-enhancement of gold nanoparitcles in coherent diffraction imaging at SACLA}
 
 % repeat the \author .. \affiliation  etc. as needed
 % \email, \thanks, \homepage, \altaffiliation all apply to the current
@@ -53,12 +53,23 @@
 % \affiliation command. The \affiliation command should follow the
 % other information
 % \affiliation can be followed by \email, \homepage, \thanks as well.
-\author{Po-Nan Li, Chi-Feng Huang, Ting-Kuo Lee, and Keng S. Liang}
+
 %\email[]{Your e-mail address}
 %\homepage[]{Your web page}
 %\thanks{}
 %\altaffiliation{}
-\affiliation{Institute of Physics, Academia Sinica, Nankang, Taipei, Taiwan}
+\author{Po-Nan Li}
+	\affiliation{Institute of Physics, Academia Sinica, Taipei 11529, Taiwan}
+\author{Chi-Feng Huang}
+	\affiliation{Institute of Physics, Academia Sinica, Taipei 11529, Taiwan}
+	\affiliation{Department of Applied Chemistry, National Chiao Tung University, Hsinchu 30010, Taiwan}
+\author{Ting-Kuo Lee}
+	\affiliation{Institute of Physics, Academia Sinica, Taipei 11529, Taiwan}
+\author{Keng S. Liang}
+	\email[To whom correspondence should be address. ]{ksliang@nsrrc.org.tw}
+	\affiliation{Institute of Physics, Academia Sinica, Taipei 11529, Taiwan}
+	\affiliation{Department of Electrophysics, National Chiao Tung University, Hsinchu 30010, Taiwan}
+	
 
 %Collaboration name if desired (requires use of superscriptaddress
 %option in \documentclass). \noaffiliation is required (may also be
@@ -70,7 +81,9 @@
 \date{\today}
 
 \begin{abstract}
-% insert abstract here
+We study the interferences of two or three gold nanoparticles under the illumination of a free-electron laser. 
+While one single gold particle could be too weak to be imaged, imaging multiple partciles is more feasible owing to the intensity enhancement from interferences. 
+Such enhancement would greatly help the coherent diffraction imaging, and could be a remedy for the imaging of weak-scattering objects.
 \end{abstract}
 
 % insert suggested PACS numbers in braces on next line
@@ -83,11 +96,35 @@
 
 % body of paper here - Use proper section commands
 % References should be done using the \cite, \ref, and \label commands
-\section{}
+\section{Introduction}
+While the coherent diffraction imaging has been widely employed to investigate the inner structure of non-crystalline weak object such as biological samples or nanoparticles, limited by the flux of current beam sources, some even weaker objects are still diificult to be imaged. 
+In order to investigate such kind of samples, some approaches have been proposed and demonstrated. For example, Lan et. al. presents a counter-intuitive method that heavy atoms can be used to enhance the biological samples without adding noise \cite{template}; Kim et. al., on the other hand, experimentally demonstrate that some ``reference objects'' added to the sample can greatly improve the image quality \cite{ref-obj}. 
+
+
+\section{Sample preparation and experiment set-up}
+
+The experimental results were collected in two separated beamtimes at SPring-8 Anstrom Compact Free Electron Laser (SACLA). 
+The first experiment was performed at BL2, where 40-nm and 5-nm streptavidin conjugated Au particle were enclosed in a micro-liquid cell \cite{liquid-cell}, and the camera length was 1.3 m. 
+The second experiment was performed at BL3, where 20-nm Au particles were also enclosed in a micro-liquid cell, and the the camera length was 1.5 m. 
+The photon energy was 4000 eV, the pulse duration was approximately 10 fs and the photon flux is about $6.225\times 10^{24}$ photons $\mu$m$^{-2}$sec$^{-1}$, beam spot diameter being 1.5 $\mu$m \cite{xfel-ssr}.
+
+The concentration of our liquid samples was carefully adjusted to maximize the probability of hitting only one single or few GNPs. 
+Prepared solution was dipped and sealed in the micro-cell, which is fabricated on a Si$_3$N$_4$ membrane, and the samples were mounted in the Multiple Application X-ray Imaging Chamber (MAXIC). 
+Single-shot speckle patterns were recorded with a $2400\times2400$ CCD dector, which has a central aperture to allow direct beam passing through.
+
+\section{Results and discussion}
+The obtained diffraction patterns were centrosymmetrized and $5\times5$ binned to improve the signal-to-noise ratio. 
+An engineered algorithm which combines the Guided hybrid input-output (GHIO) \cite{ghio} and shrink-wrap (SW) \cite{sw} was employed to reconstructed the images. 
+The reconstruction started with an initial support derived from the inverse Fourier transform of the measured intensity. 
+At the end of each generation, the copy with lowest $E_F$ is selected, and an updated support is generated from the selected copy.
+
+\section{Conclusion}
+To conclude, we studied the interferences of GNPs in CDI experiments, showing that 10-nm and 40-nm GNPs can be imaged as long as more than one GNPs are imaged. 
+
 % Put \label in argument of \section for cross-referencing
 %\section{\label{}}
-\subsection{}
-\subsubsection{}
+%\subsection{}
+%\subsubsection{}
 
 % If in two-column mode, this environment will change to single-column
 % format so that long equations can be displayed. Use
@@ -168,7 +205,8 @@
 %\end{acknowledgments}
 
 % Create the reference section using BibTeX:
-\bibliography{basename of .bib file}
+\bibliography{GNP}
+
 
 \end{document}
 %
