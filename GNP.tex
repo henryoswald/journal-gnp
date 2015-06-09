@@ -30,7 +30,7 @@
 % BibTeX style file (bst file), so only uncomment the line
 % below if necessary.
 \bibliographystyle{apsrev4-1}
-
+\usepackage{graphicx}
 \begin{document}
 
 % Use the \preprint command to place your local institutional report
@@ -106,12 +106,14 @@ Such labeling might find its application in the imaging of biological samples, b
 To investigate the feasibility of CDI enhancement with GNPs, here we will demonstrate the ``self-enhancement'' of GNPs under the illumination of the X-FEL pulse. Our reconstruction from experimental data shows that while a single GNP cannot be imaged with current pulse brilliance, the diffraction pattern of an aggregate of two or three GNPs can be reconstructed at ease.
 
 
+
+
 \section{Sample preparation and experiment set-up}
 
 The experimental results were collected in two separated beamtimes at SPring-8 Anstrom Compact Free Electron Laser (SACLA). 
-The first experiment was performed at BL2, where 40-nm and 5-nm streptavidin conjugated Au particle were enclosed in a micro-liquid cell \cite{liquid-cell}, and the camera length was 1.3 m. 
-The second experiment was performed at BL3, where 20-nm Au particles were also enclosed in a micro-liquid cell, and the the camera length was 1.5 m. 
-The photon energy was 4000 eV, the pulse duration was approximately 10 fs and the photon flux is about $6.225\times 10^{24}$ photons $\mu$m$^{-2}$sec$^{-1}$, beam spot diameter being 1.5 $\mu$m \cite{xfel-ssr}.
+The first experiment was performed at BL2, where 40-nm and 5-nm streptavidin conjugated Au particle were enclosed in a micro-liquid cell \cite{liquid-cell}, and the camera length was 1.32 m. 
+The second experiment was performed at BL3, where a mixture of 40 and 10-nm Au particles were also enclosed in a micro-liquid cell, and the the camera length was 1.52 m. 
+The photon energy was 4000 eV, the pulse duration was approximately 10 fs and the photon flux is about $6.225\times 10^{24}$ photons $\mu$m$^{-2}$sec$^{-1}$, FWHM beam spot diameter being 1.5 $\mu$m \cite{xfel-ssr}.
 
 The concentration of our liquid samples was carefully adjusted to maximize the probability of hitting only one single or few GNPs. 
 Prepared solution was dipped and sealed in the micro-cell, which is fabricated on a Si$_3$N$_4$ membrane, and the samples were mounted in the Multiple Application X-ray Imaging Chamber (MAXIC). 
@@ -121,15 +123,66 @@ The sample stage was automatically controlled by a program, and the data acquisi
 
 \section{Results and discussion}
 
-The obtained diffraction patterns were centrosymmetrized and $5\times5$ binned to improve the signal-to-noise ratio. 
+The obtained diffraction patterns were centrosymmetrized and $5\times5$ or $7\times7$ binned to improve the signal-to-noise ratio. 
 An engineered algorithm which combines the Guided hybrid input-output (GHIO) \cite{ghio} and shrink-wrap (SW) \cite{sw} was employed to reconstructed the images. 
 The reconstruction started with an initial support derived from the inverse Fourier transform of the measured intensity. 
 At the end of each generation, the copy with lowest Fourier-domain error $E_F$ is selected, and an updated support is generated from the selected copy.
 
 
+\subsection{40-nm and 5-nm GNPs}
+
+\begin{figure}
+	\includegraphics[bb = 0 120 250 250]{40nm_single.pdf}%
+	\caption{(a) The image of a reconstructed 40-nm single gold particle, and its (b) Fourier transform intensity.}
+	\label{fig:40nm_single}
+\end{figure}
+
+We first search for the diffraction pattern of the single particle among all the collected patterns. 
+Although the sample was a mixture of 5-nm and 40-nm gold particles, we just look for 40-nm single-particles, because under our experimental setting the spatial resolution is approximately 6 nm, and is therefore not capable of resolving the GNPs which are that small.
+FIG. \ref{fig:40nm_single}(a) shows one of the single 40-nm gold particle identified from 576 shot data.
+Limited by the rough pixel size, to characterize this particle with its image can be difficult.
+Therefore we alternatively measure its total density charge, as well as its ring spacing on the Fourier domain.
+
+\begin{figure}
+	\includegraphics[bb = 0 0 250 250]{trimer.pdf}%
+	\caption{(a) The image of a 40-nm GNP trimer aggregate reconstructed from (b) the measured diffraction pattern. (c) Simulated trimer aggregate and (d) its Fourier transform.}
+	\label{fig:trimer}
+\end{figure}
+
+In addition, we found that it would be easier image an aggregate of two or three particles. 
+FIG.\ref{fig:trimer}(a) shows an GNP trimer, in which three single particles have slight size deveation.
+To ensure our reconstrction is reasonable, we ran a simulation, where we put GNPs according to the arrangement in FIG.\ref{fig:trimer}(a). 
+The simulation's Fourier transform, shown in FIG.\ref{fig:trimer}(d), shows a good agreement with the experimental data.
+
+Although 5-nm GNPs were also mixed in the sample solution, by conducting simulations we conclude that the 5-nm GNP neither can be solely imaged, nor be enhanced by 40-nm GNPs.
+Guided by this conclusion, we replaced the 5-nm GNP with 10-nm GNP, performing another CDI experiment.
+
+
+\subsection{40-nm and 10-nm GNPs}
+
+\begin{figure}
+	\includegraphics[bb = 0 125 250 250]{40nm_10nm_4mer.pdf}%
+	\caption{(a) A two 10-nm GNP dimer aggregate and a two 40-nm GNP dimer aggregate, reconstructed from (b) the measured diffraction pattern.}
+	\label{fig:40nm_10nm_4mer}
+\end{figure}
+
+We learned that the imaging of a single 5-nm GNP is currently forbidden due the limited photon flux, even with the enhancement of a bigger GNP. Now we further study the imaging of a 10-nm GNP with the assistance of 40-nm GNPs. FIG.\ref{fig:40nm_10nm_4mer}(a) shows that two 10-nm GNPs, which could not be soley imaged under current photon flux, can be reconstructed along with another two 40-nm GNPs. 
+Taking the advantage of the interferences, the SNR is greatly gained in term of photon counting.
+
+\begin{figure}
+	\includegraphics[bb = 0 125 250 250]{10nm_dimer.pdf}%
+	\caption{(a) The image of a 10-nm GNP dimer aggregate reconstructed from (b) the measured diffraction pattern. (c) Simulated trimer aggregate and (d) its Fourier transform.}
+	\label{fig:10nm_dimer}
+\end{figure}
+
+Finally, FIG.\ref{fig:10nm_dimer}(a) shows that even a dimer aggregate of two 10-nm GNPs can be imaged and reconstructed.
+We are thus convinced that the interference from multiple GNPs can help its CDI.
+
 \section{Conclusion}
 
-To conclude, we studied the interferences of GNPs in CDI experiments, showing that 10-nm and 40-nm GNPs can be imaged as long as more than one GNPs are imaged. 
+To conclude, we studied the interferences of GNPs in CDI experiments, showing that the signal of 10-nm GNPs can be enhanced, either by its aggregate, or by a 40-nm GNPs. 
+These results demonsrate that, in principal, GNPs can be added with other weak objects such as a virus or liposome.
+Such methodology would be very useful for CDI experiments of noncrystalline and biological experiments.
 
 % Put \label in argument of \section for cross-referencing
 %\section{\label{}}
