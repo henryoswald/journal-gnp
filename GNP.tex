@@ -1,84 +1,51 @@
-%% ****** Start of file apstemplate.tex ****** %
-%%
-%%
-%%   This file is part of the APS files in the REVTeX 4 distribution.
-%%   Version 4.1r of REVTeX, August 2010
-%%
-%%
-%%   Copyright (c) 2001, 2009, 2010 The American Physical Society.
-%%
-%%   See the REVTeX 4 README file for restrictions and more information.
-%%
-%
-% This is a template for producing manuscripts for use with REVTEX 4.0
-% Copy this file to another name and then work on that file.
-% That way, you always have this original template file to use.
-%
-% Group addresses by affiliation; use superscriptaddress for long
-% author lists, or if there are many overlapping affiliations.
-% For Phys. Rev. appearance, change preprint to twocolumn.
-% Choose pra, prb, prc, prd, pre, prl, prstab, prstper, or rmp for journal
-%  Add 'draft' option to mark overfull boxes with black boxes
-%  Add 'showpacs' option to make PACS codes appear
-%  Add 'showkeys' option to make keywords appear
-\documentclass[aps,prb,reprint,groupedaddress, superscriptaddress]{revtex4-1}
-%\documentclass[aps,prl,preprint,superscriptaddress]{revtex4-1}
-%\documentclass[aps,prl,reprint,groupedaddress]{revtex4-1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                File: OpEx_temp.tex                  %
+%             Created: 2 September 2009               %
+%                Updated: 15 May 2015                 %
+%                                                     %
+%           LaTeX template file for use with          %
+%           OSA's journals Optics Express,            %
+%             Biomedical Optics Express,              %
+%            and Optical Materials Express            %
+%                                                     %
+%  send comments to Theresa Miller, tmiller@osa.org   %
+%                                                     %
+% This file requires style file, opex3.sty, under     %
+%              the LaTeX article class                %
+%                                                     %
+%   \documentclass[10pt,letterpaper]{article}         %
+%   \usepackage{opex3}                                %
+%                                                     %
+%                                                     %
+%       (c) 2015 Optical Society of America           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% You should use BibTeX and apsrev.bst for references
-% Choosing a journal automatically selects the correct APS
-% BibTeX style file (bst file), so only uncomment the line
-% below if necessary.
-\bibliographystyle{apsrev4-1}
+%%%%%%%%%%%%%%%%%%%%%%% preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt,letterpaper]{article}
+\usepackage{opex3}
+\usepackage{color}
 \usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%% begin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-% Use the \preprint command to place your local institutional report
-% number in the upper righthand corner of the title page in preprint mode.
-% Multiple \preprint commands are allowed.
-% Use the 'preprintnumbers' class option to override journal defaults
-% to display numbers if necessary
-%\preprint{}
-
-%Title of paper
+%%%%%%%%%%%%%%%%%% title page information %%%%%%%%%%%%%%%%%%
 \title{Self-enhancement of gold nanoparitcles in coherent diffraction imaging at SACLA}
 
-% repeat the \author .. \affiliation  etc. as needed
-% \email, \thanks, \homepage, \altaffiliation all apply to the current
-% author. Explanatory text should go in the []'s, actual e-mail
-% address or url should go in the {}'s for \email and \homepage.
-% Please use the appropriate macro foreach each type of information
+\author{Po-Nan Li, Chi-Feng Huang, Ting-Kuo Lee, Keng S. Liang}
 
-% \affiliation command applies to all authors since the last
-% \affiliation command. The \affiliation command should follow the
-% other information
-% \affiliation can be followed by \email, \homepage, \thanks as well.
+\address{Institute of Physics, Academia Sinica, Taipei 11529, Taiwan\\
+	Department of Applied Chemistry, National Chiao Tung University, Hsinchu 30010, Taiwan\\
+	Department of Electrophysics, National Chiao Tung University, Hsinchu 30010, Taiwan\\
+	
+	}
 
-%\email[]{Your e-mail address}
-%\homepage[]{Your web page}
-%\thanks{}
-%\altaffiliation{}
-\author{Po-Nan Li}
-	\affiliation{Institute of Physics, Academia Sinica, Taipei 11529, Taiwan}
-\author{Chi-Feng Huang}
-	\affiliation{Institute of Physics, Academia Sinica, Taipei 11529, Taiwan}
-	\affiliation{Department of Applied Chemistry, National Chiao Tung University, Hsinchu 30010, Taiwan}
-\author{Ting-Kuo Lee}
-	\affiliation{Institute of Physics, Academia Sinica, Taipei 11529, Taiwan}
-\author{Keng S. Liang}
-	\email[To whom correspondence should be address. ]{ksliang@nsrrc.org.tw}
-	\affiliation{Institute of Physics, Academia Sinica, Taipei 11529, Taiwan}
-	\affiliation{Department of Electrophysics, National Chiao Tung University, Hsinchu 30010, Taiwan}
+\email{$^*$ ksliang@nsrrc.org.tw}
+
 	
 
-%Collaboration name if desired (requires use of superscriptaddress
-%option in \documentclass). \noaffiliation is required (may also be
-%used with the \author command).
-%\collaboration can be followed by \email, \homepage, \thanks as well.
-%\collaboration{}
-%\noaffiliation
 
-\date{\today}
+
 
 \begin{abstract}
 We study the interferences of two or three gold nanoparticles under the illumination of a free-electron laser. 
@@ -86,16 +53,20 @@ While one single gold particle could be too weak to be imaged, imaging multiple 
 Such enhancement would greatly help the coherent diffraction imaging, and could be a remedy for the imaging of weak-scattering objects.
 \end{abstract}
 
-% insert suggested PACS numbers in braces on next line
-\pacs{}
-% insert suggested keywords - APS authors don't need to do this
-%\keywords{}
+\ocis{(000.0000) General.} % REPLACE WITH CORRECT OCIS CODES FOR YOUR ARTICLE, MINIMUM OF TWO; Avoid using the OCIS codes for “General” or “General science” whenever possible.
 
-%\maketitle must follow title, authors, abstract, \pacs, and \keywords
-\maketitle
+%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%
 
-% body of paper here - Use proper section commands
-% References should be done using the \cite, \ref, and \label commands
+\begin{thebibliography}{10}
+\bibitem{template} T.-Y. Lan, P.-N. Li, and T.-K. Lee, ``Method to enhance the resolution of x-ray coherent diffraction imaging for non-crystalline bio-samples'' New J. Phys. 16, 033016 (2014).
+\bibitem{ref-obj} C. Kim, Y. Kim, C. Song, S. S. Kim, S. Kim, H. C. Kang, Y. Hwu, K.-D. Tsuei, K. S. Liang, and D. Y. Noh, Opt. Exp. 22, 29161 (2014).
+\bibitem{shintake} T. Shintake, ``Possibility of single biomolecule imaging with coherent amplification of weak scattering x-ray photons,'' Phys. Rev. E 78, 041906 (2008).
+\bibitem{micro-liquid} T. Kimura, Y. Joti, A. Shibuya, C. Song, S. Kim, K. Tono, M. Yabashi, M. Tamakoshi, T. Moriya, T. Oshima, T. Ishikawa, Y. Bessho, and Y. Nishino, ``Imaging live cell in micro-liquid enclosure by X-ray laser diffraction,'' Nature Comm. 5, 3052 (2014).
+\bibitem{xfel-ssr} M. Gallagher-Jones, Y. Bessho, S. Kim, J. Park, S. Kim, D. Nam, C. Kim, Y. Kim, D. Y. Noh, O. Miyashita, F. Tama, Y. Joti, T. Kameshima, T. Hatsui, K. Tono, Y. Kohmura, M. Yabashi, S. S. Hasnain, T. Ishikawa, and C. Song, ``Macromolecular structures probed by combining single-shot free-electron laser diffraction with synchrotron coherent X-ray imaging,'' Nature Comm. 5, 3798 (2014).
+\bibitem{ghio} C.-C. Chen, J. Miao, C. W. Wang, and T. K. Lee, ``Application of optimization technique to noncrystalline x-ray diffraction microscopy: Guided hybrid input-output method,'' \prb 76, 064113 (2007).
+\bibitem{sw} S. Marchesini, H. He, H. N. Chapman, S. P. Hau-Riege, A. Noy, M. R. Howells, U. Weierstall, and J. C. H. Spence, ``X-ray image reconstruction from a diffraction pattern alone,'' \prb 68, 14101(R) (2003).
+\end{thebibliography}
+
 \section{Introduction}
 While the coherent diffraction imaging has been widely employed to investigate the inner structure of non-crystalline weak object such as biological samples or nanoparticles, limited by the flux of current beam sources, some even weaker objects are still diificult to be imaged. 
 In order to investigate such kind of samples, some approaches have been proposed and demonstrated. For example, Lan et. al. presents a counter-intuitive method that heavy atoms can be used to enhance the biological samples without adding noise \cite{template}; Kim et. al., on the other hand, experimentally demonstrate that some ``reference objects'' added to the sample can greatly improve the image quality \cite{ref-obj}. 
@@ -111,7 +82,7 @@ To investigate the feasibility of CDI enhancement with GNPs, here we will demons
 \section{Sample preparation and experiment set-up}
 
 The experimental results were collected in two separated beamtimes at SPring-8 Anstrom Compact Free Electron Laser (SACLA). 
-The first experiment was performed at BL2, where 40-nm and 5-nm streptavidin conjugated Au particle were enclosed in a micro-liquid cell \cite{liquid-cell}, and the camera length was 1.32 m. 
+The first experiment was performed at BL2, where 40-nm and 5-nm streptavidin conjugated Au particle were enclosed in a micro-liquid cell \cite{micro-liquid}, and the camera length was 1.32 m. 
 The second experiment was performed at BL3, where a mixture of 40 and 10-nm Au particles were also enclosed in a micro-liquid cell, and the the camera length was 1.52 m. 
 The photon energy was 4000 eV, the pulse duration was approximately 10 fs and the photon flux is about $6.225\times 10^{24}$ photons $\mu$m$^{-2}$sec$^{-1}$, FWHM beam spot diameter being 1.5 $\mu$m \cite{xfel-ssr}.
 
@@ -184,94 +155,7 @@ To conclude, we studied the interferences of GNPs in CDI experiments, showing th
 These results demonsrate that, in principal, GNPs can be added with other weak objects such as a virus or liposome.
 Such methodology would be very useful for CDI experiments of noncrystalline and biological experiments.
 
-% Put \label in argument of \section for cross-referencing
-%\section{\label{}}
-%\subsection{}
-%\subsubsection{}
-
-% If in two-column mode, this environment will change to single-column
-% format so that long equations can be displayed. Use
-% sparingly.
-%\begin{widetext}
-% put long equation here
-%\end{widetext}
-
-% figures should be put into the text as floats.
-% Use the graphics or graphicx packages (distributed with LaTeX2e)
-% and the \includegraphics macro defined in those packages.
-% See the LaTeX Graphics Companion by Michel Goosens, Sebastian Rahtz,
-% and Frank Mittelbach for instance.
-%
-% Here is an example of the general form of a figure:
-% Fill in the caption in the braces of the \caption{} command. Put the label
-% that you will use with \ref{} command in the braces of the \label{} command.
-% Use the figure* environment if the figure should span across the
-% entire page. There is no need to do explicit centering.
-
-% \begin{figure}
-% \includegraphics{}%
-% \caption{\label{}}
-% \end{figure}
-
-% Surround figure environment with turnpage environment for landscape
-% figure
-% \begin{turnpage}
-% \begin{figure}
-% \includegraphics{}%
-% \caption{\label{}}
-% \end{figure}
-% \end{turnpage}
-
-% tables should appear as floats within the text
-%
-% Here is an example of the general form of a table:
-% Fill in the caption in the braces of the \caption{} command. Put the label
-% that you will use with \ref{} command in the braces of the \label{} command.
-% Insert the column specifiers (l, r, c, d, etc.) in the empty braces of the
-% \begin{tabular}{} command.
-% The ruledtabular enviroment adds doubled rules to table and sets a
-% reasonable default table settings.
-% Use the table* environment to get a full-width table in two-column
-% Add \usepackage{longtable} and the longtable (or longtable*}
-% environment for nicely formatted long tables. Or use the the [H]
-% placement option to break a long table (with less control than 
-% in longtable).
-% \begin{table}%[H] add [H] placement to break table across pages
-% \caption{\label{}}
-% \begin{ruledtabular}
-% \begin{tabular}{}
-% Lines of table here ending with \\
-% \end{tabular}
-% \end{ruledtabular}
-% \end{table}
-
-% Surround table environment with turnpage environment for landscape
-% table
-% \begin{turnpage}
-% \begin{table}
-% \caption{\label{}}
-% \begin{ruledtabular}
-% \begin{tabular}{}
-% \end{tabular}
-% \end{ruledtabular}
-% \end{table}
-% \end{turnpage}
-
-% Specify following sections are appendices. Use \appendix* if there
-% only one appendix.
-%\appendix
-%\section{}
-
-% If you have acknowledgments, this puts in the proper section head.
-%\begin{acknowledgments}
-% put your acknowledgments here.
-%\end{acknowledgments}
-
-% Create the reference section using BibTeX:
-\bibliography{GNP}
-
 
 \end{document}
-%
-% ****** End of file apstemplate.tex ******
+
 
